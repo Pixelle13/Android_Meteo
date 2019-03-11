@@ -3,4 +3,7 @@
     <string name="editMdp">Enter your password</string>
     <string name="editMail">Enter your mail adress</string>
     <string name="loginTitle">Please, sign in !</string>
+    <string name="menu1">Accueil</string>
+    <string name="menu2">Météo</string>
+    <string name="json"></string>
 </resources>
