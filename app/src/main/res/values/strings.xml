@@ -6,4 +6,5 @@
     <string name="menu1">Accueil</string>
     <string name="menu2">Météo</string>
     <string name="json"></string>
+    <string name="bienvenue">Bienvenue </string>
 </resources>

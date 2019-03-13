@@ -1,6 +1,7 @@
 package com.example.mymeteoapp;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -73,6 +74,15 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void login (View v) {
+
+        Intent meteo = new Intent(this, MeteoActivity.class);
+        TextView email = findViewById(R.id.editText2);
+        meteo.putExtra("email", email.getText().toString());
+        startActivity(meteo);
+
+    }
+
     public void callWebService (View v) {
         String sURL = "https://www.prevision-meteo.ch/services/json/grenoble";
 
@@ -96,6 +106,34 @@ public class MainActivity extends AppCompatActivity {
                 });
 
         queue.add(request);
+
+    }
+
+
+    public class DownloadFilesTask extends AsyncTask<String, Boolean, Boolean> {
+
+        protected void onPreExecute(){}
+
+        protected Boolean doInBackground(String... urls) {
+
+            //Can take several seconds here : UI won't be blocked
+            refreshFromInternet();
+
+            return true;
+        }
+
+        protected void onPostExecute(Boolean result) {}
+
+        private void refreshFromInternet() {
+
+            //Simule un appel au web service
+            //bloque le thread pendant 5 secondes
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 
