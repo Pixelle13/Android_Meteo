@@ -56,8 +56,11 @@ public class MainActivity extends AppCompatActivity {
         item.setChecked(true);
         m_drawerlayout.closeDrawers();
 
-        if (item.getItemId() == R.id.menu_forecast)
+        if (item.getItemId() == R.id.menu_forecast) {
             startActivity(new Intent(this, MeteoActivity.class));
+        } else if (item.getItemId() == R.id.menu_list_forecast) {
+            startActivity(new Intent(this, ListViewActivity.class));
+        }
 
         return true;
     }

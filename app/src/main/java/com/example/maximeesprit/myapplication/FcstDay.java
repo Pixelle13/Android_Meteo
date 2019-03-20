@@ -19,16 +19,16 @@ public class FcstDay {
 
     public FcstDay(JSONObject object) throws JSONException {
 
-        setDate(object.getString("date"));
-        setDay_short(object.getString("day_short"));
-        setDay_long(object.getString("day_long"));
-        setTmin(object.getInt("tmin"));
-        setTmax(object.getInt("tmax"));
-        setCondition(object.getString("condition"));
-        setCondition_key(object.getString("condition_key"));
-        setIcon(object.getString("icon"));
-        setIcon_big(object.getString("icon_big"));
-        setHourly_data(object.getJSONObject("hourly_data"));
+        date = object.getString("date");
+        day_short = object.getString("day_short");
+        day_long = object.getString("day_long");
+        tmin = object.getInt("tmin");
+        tmax = object.getInt("tmax");
+        condition = object.getString("condition");
+        condition_key = object.getString("condition_key");
+        icon = object.getString("icon");
+        icon_big = object.getString("icon_big");
+        hourly_data = object.getJSONObject("hourly_data");
     }
 
 

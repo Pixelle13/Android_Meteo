@@ -25,7 +25,7 @@ public class MeteoActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String email = intent.getStringExtra("email");
         TextView bienvenue = findViewById(R.id.text_bienvenue);
-        bienvenue.append(email+" !");
+        bienvenue.append(" "+email+" !");
 
         //TODO Pour afficher la météo d'une ville
         //String city = intent.getStringExtra("city");

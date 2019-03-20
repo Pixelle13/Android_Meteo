@@ -20,6 +20,10 @@
             android:label="Meteo"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".ListViewActivity"
+            android:label="Liste Meteo"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 

@@ -12,9 +12,9 @@ public class ForecastInfo {
 
     public ForecastInfo(JSONObject object) throws JSONException {
 
-        setLatitude(object.getString("latitude"));
-        setLongitude(object.getString("longitude"));
-        setElevation(object.getString("elevation"));
+        latitude = object.getString("latitude");
+        longitude = object.getString("longitude");
+        elevation = object.getString("elevation");
     }
 
     public String getLatitude() { return this.latitude; }

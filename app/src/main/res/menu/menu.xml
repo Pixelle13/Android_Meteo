@@ -12,5 +12,9 @@
             android:title="@string/menu2"
             android:icon="@drawable/ic_action_sun_fg"/>
 
+        <item android:id="@+id/menu_list_forecast"
+            android:title="ListView"
+            android:icon="@drawable/ic_list_foreground"/>
+
     </group>
 </menu>

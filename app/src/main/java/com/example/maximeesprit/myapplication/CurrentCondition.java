@@ -20,18 +20,34 @@ public class CurrentCondition {
 
     public CurrentCondition(JSONObject object) throws JSONException {
 
-        setDate(object.getString("date"));
-        setHour(object.getString("hour"));
-        setTmp(object.getInt("tmp"));
-        setWnd_spd(object.getInt("wnd_spd"));
-        setWnd_gust(object.getInt("wnd_gust"));
-        setWnd_dir(object.getString("wnd_dit"));
-        setPressure(object.getDouble("pressure"));
-        setHumidity(object.getInt("humidity"));
-        setCondition(object.getString("condition"));
-        setCondition_key(object.getString("condition_key"));
-        setIcon(object.getString("icon"));
-        setIcon_big(object.getString("icon_big"));
+        date = object.getString("date");
+        hour = object.getString("hour");
+        tmp = object.getInt("tmp");
+        wnd_spd = object.getInt("wnd_spd");
+        wnd_gust = object.getInt("wnd_gust");
+        wnd_dir = object.getString("wnd_dir");
+        pressure = object.getDouble("pressure");
+        humidity = object.getInt("humidity");
+        condition = object.getString("condition");
+        condition_key = object.getString("condition_key");
+        icon = object.getString("icon");
+        icon_big = object.getString("icon_big");
+    }
+
+
+    public String toString() {
+        return "Date : "+this.date+
+                "\nHour : "+this.hour+
+                "\nTmp : "+this.tmp+
+                "\nWind speed : "+this.wnd_spd+
+                "\nWind gust : "+this.wnd_gust+
+                "\nWind direction : "+this.wnd_dir+
+                "\nPressure : "+this.pressure+
+                "\nHumidity : "+this.humidity+
+                "\nCondition : "+this.condition+
+                "\nCondition key : "+this.condition_key+
+                "\nIcon : "+this.icon+
+                "\nIcon big : "+this.icon_big;
     }
 
     public String getDate() {
