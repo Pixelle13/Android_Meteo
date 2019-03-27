@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imgviewMeteo"/>
-
-    <LinearLayout
+    <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:id="@+id/swiperefreshlayout">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <ListView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textviewDay"/>
+            android:id="@+id/listview"></ListView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textviewDesc"/>
-
-    </LinearLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

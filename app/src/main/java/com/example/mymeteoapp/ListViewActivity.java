@@ -5,7 +5,6 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -39,8 +38,8 @@ public class ListViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listview);
 
         //Retrieve views form XML
-        //////m_listview = findViewById(R.id.listview);
-        //////m_refresher = findViewById(R.id.swiperefreshlayout);
+        m_listview = findViewById(R.id.listview);
+        m_refresher = findViewById(R.id.swiperefreshlayout);
 
         //Instancie une variable de type ArrayAdapter
         m_adapter = new MeteoAdapter(this,0);
@@ -123,17 +122,21 @@ public class ListViewActivity extends AppCompatActivity {
                             //c'est l'adapteur qui va modifier la ListView
                             m_adapter.addAll(m_lsDaysToShow);
 
-                        } catch (Exception e) {}
+                        } catch (Exception e) {
+
+                        } finally {
+                            m_refresher.setRefreshing(false);
+                        }
                     }
                 },
 
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        m_refresher.setRefreshing(false);
                     }
                 });
-
+        m_refresher.setRefreshing(true);
         queue.add(request);
     }
 

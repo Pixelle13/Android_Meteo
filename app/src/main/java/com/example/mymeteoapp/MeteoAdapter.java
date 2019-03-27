@@ -1,7 +1,6 @@
 package com.example.mymeteoapp;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +10,6 @@ import android.widget.TextView;
 
 import com.example.maximeesprit.myapplication.FcstDay;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -50,7 +47,7 @@ public class MeteoAdapter extends ArrayAdapter<FcstDay> {
         LayoutInflater inflater = (LayoutInflater) m_context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         //Inflate le layout XML listview_item
-        View rowView = inflater.inflate(R.layout.activity_listview, parent, false);
+        View rowView = inflater.inflate(R.layout.activity_listview_item, parent, false);
 
         //Référence les vues
         TextView textViewDay = (TextView) rowView.findViewById(R.id.textviewDay);
