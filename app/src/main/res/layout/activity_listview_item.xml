@@ -19,13 +19,13 @@
             android:id="@+id/textviewDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="ghfhgfh" />
+            tools:text="jour" />
 
         <TextView
             android:id="@+id/textviewDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="tessl" />
+            tools:text="description" />
 
     </LinearLayout>
 

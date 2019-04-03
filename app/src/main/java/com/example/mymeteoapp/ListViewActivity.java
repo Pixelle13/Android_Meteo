@@ -1,10 +1,14 @@
 package com.example.mymeteoapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -46,6 +50,25 @@ public class ListViewActivity extends AppCompatActivity {
 
         //Indique à la ListView quel Adapter elle doit utiliser
         m_listview.setAdapter(m_adapter);
+
+        //Intercepte le clic de l'utilisateur sur un item de la ListView
+        m_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //position contient l'index de l'item cliqué dans la ListView
+                //On récupère donc l'objet du même index depuis la liste des données
+                FcstDay itemClicked = m_lsDaysToShow.get(position);
+
+                //////Afiche un Toast à l'écran
+                //Toast.makeText(ListViewActivity.this, itemClicked.getDay_long(), Toast.LENGTH_LONG).show();
+
+                //Ouvre la page de détail, en passant le FcstDay en paramètre
+                //Astuce : on passe l'objet sous la forme d'une chaîne Json !
+                Intent intent = new Intent(ListViewActivity.this, DetailActivity.class);
+                intent.putExtra("dayToShow", itemClicked.toJsonString());
+                startActivity(intent);
+            }
+        });
 
 
         //Lorsque l'utilisateur fait un SwipeToRefresh

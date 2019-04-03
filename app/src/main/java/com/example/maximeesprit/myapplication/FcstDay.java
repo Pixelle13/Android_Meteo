@@ -17,6 +17,8 @@ public class FcstDay {
     private String icon_big;
     private JSONObject hourly_data;
 
+    private JSONObject object;
+
     public FcstDay(JSONObject object) throws JSONException {
 
         date = object.getString("date");
@@ -29,8 +31,13 @@ public class FcstDay {
         icon = object.getString("icon");
         icon_big = object.getString("icon_big");
         hourly_data = object.getJSONObject("hourly_data");
+        this.object = object;
     }
 
+
+    public String toJsonString() {
+        return object.toString();
+    }
 
     public String getDate() {
         return date;
