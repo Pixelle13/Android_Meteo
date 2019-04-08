@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -40,6 +41,11 @@ public class ListViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listview);
+
+        Intent intent = getIntent();
+        String email = intent.getStringExtra("email");
+        TextView bienvenue = findViewById(R.id.text_bienvenue);
+        bienvenue.append(" "+email+" !");
 
         //Retrieve views form XML
         m_listview = findViewById(R.id.listview);

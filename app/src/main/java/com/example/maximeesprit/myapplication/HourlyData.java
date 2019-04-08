@@ -21,7 +21,7 @@ public class HourlyData {
         this.temperature = jsonobject.getString("TMP2m");
         this.wind_spd = jsonobject.getString("WNDSPD10m");
         this.wind_dir = jsonobject.getString("WNDDIRCARD10");
-        this.humidity = jsonobject.getString("HCDC");
+        this.humidity = jsonobject.getString("RH2m");
     }
 
     public int getId_hour() {
